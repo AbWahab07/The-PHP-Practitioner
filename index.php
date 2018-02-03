@@ -32,11 +32,15 @@
        'Che'
    ];
 
+   /*
    var_dump($animals);
    unset($animals['Mao']);
    var_dump($animals);
-   $animals[] = 'Abd';
-   var_dump($animals);
+   $animals[] = 'Abd';// Adding item to an Array
+   var_dump($animals);// prins/ echo the Array
+   */
+
+
    /*Step 7: Associative Arrays or AA
    Add an item to AA e.g $person[key]
    Remove an item unset($person[key])
@@ -52,9 +56,9 @@
         'assigned_to' => 'Abdul',
     ];
 
-    $task['completed'] = true;
-    //unset($task); Displays an error as we've deleted the entire array.
-    unset($task['due']);
+    $task['completed'] = false;
+    //unset($task);  //Displays an error as we've deleted the entire array.
+    //unset($task['due']);
 
      //echo $task; doesn't work as we're trying to convert an Array to string.
 
@@ -64,6 +68,10 @@
 
      //die();// terminates the program execution
      //die(var_dump($task)); // Often used in conjunction
+
+     /*Step 8: Booleans
+     Ternary Operator:  conditional ? if true : if false
+     */
 
 
    require 'index.view.php';
