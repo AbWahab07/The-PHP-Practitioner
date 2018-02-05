@@ -1,0 +1,19 @@
+Change Directory to D type D:/
+Change folder type cd path
+
+Open PHP via CMD
+cd c:\xampp\php
+
+
+Open MySql via CMD
+cd c:\xampp\mysql\bin
+mysql.exe -u root
+
+show databases -> ;
+create database DATABASE_NAME; // To create a new database.
+use DATA_BASENAME  // To change database being used.
+show tables
+create table (name TYPE, name TYPE)
+describe TABLE_NAME
+
+

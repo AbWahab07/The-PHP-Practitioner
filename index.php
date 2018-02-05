@@ -1,79 +1,26 @@
 <?php
-    //echo "Hello World";
+// Step 13: Intro to PDO
+// Establish database connection. Always use PDO(PHP Data Object) an interface to coonect to a database.
+// mysql_connect is deprecated and don't use it. Allow for SQL injection.
+// Pass connection string as an argument to PDO object.
+// Check connection validation. e.g try catch block.
+// Prepare an SQL query (Statement)
+// Execute an SQL query (Statement)
+// We can fetch all resluts in a PDO::FETCH_OBJ or PDO::FETCH_CLASS
+// Benfit of fecting in a class (PDO::FETCH_CLASS) is, you can always call the methods defined in the class on any of the returned result item.
+// Use the same names for the class properties as the name of the columns in a table. e.g DESC property in class for DESC column name in Table.
 
-    /* Step 3 : Variable is defined by appending $ at the start.
-    $greeting = 'Hello';
-    $name = 'Abdul';
-    echo "{$greeting}, {$name}";
-    */
+    //die(var_dump($_SERVER));
 
-    /* Step 4: PHP and HTML
-    Super Global e.g $_GET['key']
-    Sanitization for Web Security e.g use htmlspecialchars on the input from the user.
-    Always expect userinput to be malicious unless it proves to be innocent.
-   */
+    $database = require 'core/bootstrap.php';
 
-   /*Step 5: HTML and PHP separation
-   Separate PHP code logic by using require in the php file to show the view/HTML file. e.g require 'index.view.php'
-   and use the shorthand <?= ?> to echo code in the view/HTML file
-   */
+    //die(var_dump($_SERVER));
+    $uri = trim($_SERVER['REQUEST_URI'], '/');
+    //die(var_dump($uri));
 
-   $greeting = 'Hello ' . htmlspecialchars($_GET['name']);
+    $router = new Router();
+    require 'routes.php';
 
-   /*Step 6: Ararys
-   Collection of related thing
-   */
+    require $router->direct($uri);
 
-   $animals = [
-       'Mao',
-       'Guo',
-       'Cat',
-       'Dog',
-       'Che'
-   ];
-
-   /*
-   var_dump($animals);
-   unset($animals['Mao']);
-   var_dump($animals);
-   $animals[] = 'Abd';// Adding item to an Array
-   var_dump($animals);// prins/ echo the Array
-   */
-
-
-   /*Step 7: Associative Arrays or AA
-   Add an item to AA e.g $person[key]
-   Remove an item unset($person[key])
-   echo is used to oputput a string.
-   if you want to output something other than string use var_dump(val)
-   die is used to terminate/break/stop the execution so you can debug or can check what value a particular vairable have.
-   */
-
-
-    $task = [
-        'title' => 'Go to Shop',
-        'due' => 'Today',
-        'assigned_to' => 'Abdul',
-    ];
-
-    $task['completed'] = false;
-    //unset($task);  //Displays an error as we've deleted the entire array.
-    //unset($task['due']);
-
-     //echo $task; doesn't work as we're trying to convert an Array to string.
-
-     //echo '<pre>'; formats the output into a bit readable format
-     //var_dump($task); // echo AA.
-     //echo '</pre>';
-
-     //die();// terminates the program execution
-     //die(var_dump($task)); // Often used in conjunction
-
-     /*Step 8: Booleans
-     Ternary Operator:  conditional ? if true : if false
-     */
-
-
-   require 'index.view.php';
-
- ?>
+?>
