@@ -12,7 +12,8 @@
 
     //die(var_dump($_SERVER));
 
-    $database = require 'core/bootstrap.php';
+    require 'vendor/autoload.php';
+    require 'core/bootstrap.php';
 
     //die(var_dump($_SERVER));
     $uri = trim($_SERVER['REQUEST_URI'], '/');

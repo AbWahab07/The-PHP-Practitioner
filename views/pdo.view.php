@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>PDO Concepts</title>
-    </head>
-    <body>
-        <div class="container">
-            <ul>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
+<?php require 'partials/header.php'; ?>
             <ul>
                 <?php foreach($tasks as $task) : ?>
                     <?php if($task->completed) : ?>
@@ -19,6 +8,4 @@
                     <?php endif; ?>
             <?php endforeach; ?>
             </ul>
-        </div>
-    </body>
-</html>
+<?php require 'partials/footer.php'; ?>
