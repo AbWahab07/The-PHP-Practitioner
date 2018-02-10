@@ -1,5 +1,5 @@
 <?php
-    $tasks = $database->all('todos');
+    $tasks = App::get('database')->all('todos');
 
     require 'views/pdo.view.php';
  ?>
